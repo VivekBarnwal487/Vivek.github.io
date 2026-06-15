@@ -3,73 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume</title>
+    <title>Simple Movie Searcher</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav>
-        <div class="logo">Vivek Kumar Barnwal</div>
-        <div class="links">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+    <div class="container">
+        <h1>Movie Searcher</h1>
+        
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search for a movie title...">
+            <button id="searchBtn">Search</button>
         </div>
-    </nav>
 
-    <header>
-        <img src="profile.jpg.jpeg" alt="Vivek Kumar Barnwal" class="profile-pic">
-        <h1>Vivek Kumar Barnwal</h1>
-        <p>First-year Electronics and Communication Engineering student at BIT SINDRI. Passionate about web development, technology, problem solving, and continuous learning.</p>
-        <div class="socials">
-            <a href="https://www.linkedin.com/in/vivek-kumar-barnwal-47a9b438a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a>
-            <a href="https://www.instagram.com/vivek_barnwal1?igsh=MWw2ZmhuczQ3ZzZydA==" target="_blank">Instagram</a>
-            <a href="https://wa.me/qr/ZOGYWNBVVCHZF1" target="_blank">WhatsApp</a>
-        </div>
-    </header>
+        <div id="genreFilters" class="genre-container"></div>
 
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>I am Vivek Kumar Barnwal from the Electronics and Communication Engineering Department at BIT SINDRI. I enjoy learning new technologies and developing websites using HTML and CSS. My aim is to improve my technical skills.</p>
-        </section>
+        <div id="results" class="results-grid"></div>
+    </div>
 
-        <section id="skills">
-            <h2>Skills</h2>
-            <p><strong>Tech Skills:</strong> Python, C programming, HTML, CSS, Problem Solving</p>
-            <p><strong>Other Skills:</strong> Communication, Teamwork</p>
-        </section>
-
-        <section id="projects">
-            <h2>Project</h2>
-            <div class="project-list">
-                <div class="project">
-                    <h3>Portfolio Website</h3>
-                    <p>A personal portfolio website developed using HTML and CSS.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2>Contact</h2>
-            <div class="contact-info">
-                <p><strong>Phone:</strong> <a href="tel:+916206559189">6206559189</a></p>
-                <p><strong>Email:</strong> <a href="mailto:ak2209306@gmail.com">ak2209306@gmail.com</a></p>
-                <p><strong>Location:</strong> Dhanbad, Jharkhand</p>
-            </div>
-            <form>
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Message" rows="4" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Vivek Kumar Barnwal</p>
-    </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
