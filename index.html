@@ -3,22 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Movie Searcher</title>
+    <title>Interactive Quiz App</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        <h1>Movie Searcher</h1>
-        
-        <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Search for a movie title...">
-            <button id="searchBtn">Search</button>
+    <div class="quiz-container">
+        <div id="quiz-screen">
+            <h2 id="question-text">Question goes here</h2>
+            <div id="answer-buttons">
+                </div>
+            <button id="next-btn" class="hidden">Next Question</button>
         </div>
 
-        <div id="genreFilters" class="genre-container"></div>
-
-        <div id="results" class="results-grid"></div>
+        <div id="score-screen" class="hidden">
+            <h2>Quiz Completed!</h2>
+            <p>Your score: <span id="score">0</span> out of <span id="total">0</span></p>
+            <button id="restart-btn">Restart Quiz</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
