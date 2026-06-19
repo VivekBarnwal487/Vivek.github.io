@@ -3,73 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume</title>
+    <title>Premium Interactive Quiz</title>
+    <!-- Importing a modern, clean font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav>
-        <div class="logo">Vivek Kumar Barnwal</div>
-        <div class="links">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+    <div class="quiz-container">
+        <!-- Header -->
+        <div class="quiz-header">
+            <h1>Brainiac Quiz</h1>
+            <div id="progress-text">Question 1 of 8</div>
         </div>
-    </nav>
 
-    <header>
-        <img src="profile.jpg.jpeg" alt="Vivek Kumar Barnwal" class="profile-pic">
-        <h1>Vivek Kumar Barnwal</h1>
-        <p>First-year Electronics and Communication Engineering student at BIT SINDRI. Passionate about web development, technology, problem solving, and continuous learning.</p>
-        <div class="socials">
-            <a href="https://www.linkedin.com/in/vivek-kumar-barnwal-47a9b438a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a>
-            <a href="https://www.instagram.com/vivek_barnwal1?igsh=MWw2ZmhuczQ3ZzZydA==" target="_blank">Instagram</a>
-            <a href="https://wa.me/qr/ZOGYWNBVVCHZF1" target="_blank">WhatsApp</a>
+        <!-- Quiz Screen -->
+        <div id="quiz-screen">
+            <h2 id="question-text">Question text will load here...</h2>
+            <div id="answer-buttons" class="btn-grid">
+                <!-- Dynamic buttons go here -->
+            </div>
+            <button id="next-btn" class="control-btn hidden">Next Question →</button>
         </div>
-    </header>
 
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>I am Vivek Kumar Barnwal from the Electronics and Communication Engineering Department at BIT SINDRI. I enjoy learning new technologies and developing websites using HTML and CSS. My aim is to improve my technical skills.</p>
-        </section>
+        <!-- Results Screen -->
+        <div id="score-screen" class="hidden">
+            <div class="trophy-icon">🏆</div>
+            <h2>Quiz Completed!</h2>
+            <p class="final-score">You scored <span id="score">0</span> out of <span id="total">0</span></p>
+            <button id="restart-btn" class="control-btn">Try Again</button>
+        </div>
+    </div>
 
-        <section id="skills">
-            <h2>Skills</h2>
-            <p><strong>Tech Skills:</strong> Python, C programming, HTML, CSS, Problem Solving</p>
-            <p><strong>Other Skills:</strong> Communication, Teamwork</p>
-        </section>
-
-        <section id="projects">
-            <h2>Project</h2>
-            <div class="project-list">
-                <div class="project">
-                    <h3>Portfolio Website</h3>
-                    <p>A personal portfolio website developed using HTML and CSS.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2>Contact</h2>
-            <div class="contact-info">
-                <p><strong>Phone:</strong> <a href="tel:+916206559189">6206559189</a></p>
-                <p><strong>Email:</strong> <a href="mailto:ak2209306@gmail.com">ak2209306@gmail.com</a></p>
-                <p><strong>Location:</strong> Dhanbad, Jharkhand</p>
-            </div>
-            <form>
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Message" rows="4" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Vivek Kumar Barnwal</p>
-    </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>

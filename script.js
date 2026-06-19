@@ -1,5 +1,5 @@
 const questions = [
-    // --- India Questions ---
+    // --- INDIA QUESTIONS ---
     {
         question: "In which year did India gain Independence from British rule?",
         answers: [
@@ -10,46 +10,62 @@ const questions = [
         ]
     },
     {
-        question: "Which river is officially recognized as the National River of India?",
+        question: "Which Indian city is globally recognized as the 'Silicon Valley of India'?",
         answers: [
-            { text: "Yamuna", correct: false },
-            { text: "Narmada", correct: false },
-            { text: "Ganga", correct: true },
-            { text: "Brahmaputra", correct: false }
+            { text: "Mumbai", correct: false },
+            { text: "Hyderabad", correct: false },
+            { text: "Bengaluru", correct: true },
+            { text: "Pune", correct: false }
         ]
     },
     {
         question: "Who is fondly remembered as the 'Father of the Indian Constitution'?",
-        mcq: true,
         answers: [
             { text: "Mahatma Gandhi", correct: false },
             { text: "Dr. B.R. Ambedkar", correct: true },
             { text: "Jawaharlal Nehru", correct: false },
-            { text: "Subhas Chandra Bose", correct: false }
+            { text: "Netaji Subhas Chandra Bose", correct: false }
         ]
     },
-
-    // --- BIT Sindri Questions ---
+    {
+        question: "What is the national heritage animal of India?",
+        answers: [
+            { text: "Royal Bengal Tiger", correct: false },
+            { text: "Indian Elephant", correct: true },
+            { text: "One-horned Rhinoceros", correct: false },
+            { text: "Asiatic Lion", correct: false }
+        ]
+    },
+    // --- BIT SINDRI QUESTIONS ---
     {
         question: "In what year was BIT Sindri originally established?",
         answers: [
             { text: "1947", correct: false },
             { text: "1949", correct: true },
-            { text: "1955", correct: false },
-            { text: "1960", correct: false }
+            { text: "1952", correct: false },
+            { text: "1955", correct: false }
         ]
     },
     {
-        question: "Before the year 2000, what did the 'B' in BIT Sindri stand for?",
+        question: "Who served as the revered first Director of BIT Sindri?",
+        answers: [
+            { text: "Dr. D.L. Deshpande", correct: true },
+            { text: "Dr. Rajendra Prasad", correct: false },
+            { text: "Prof. S. Prasad", correct: false },
+            { text: "Dr. B.R. Seth", correct: false }
+        ]
+    },
+    {
+        question: "Before the year 2000, what did the letter 'B' in BIT Sindri stand for?",
         answers: [
             { text: "Birsa", correct: false },
             { text: "Bharat", correct: false },
-            { text: "Bengal", correct: false },
-            { text: "Bihar", correct: true }
+            { text: "Bihar", correct: true },
+            { text: "Bengal", correct: false }
         ]
     },
     {
-        question: "BIT Sindri's beautiful campus is situated near the banks of which river?",
+        question: "BIT Sindri's expansive campus is situated near the banks of which river?",
         answers: [
             { text: "Damodar River", correct: true },
             { text: "Subarnarekha River", correct: false },
@@ -62,6 +78,7 @@ const questions = [
 const questionElement = document.getElementById("question-text");
 const answerButtonsElement = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
+const progressText = document.getElementById("progress-text");
 const quizScreen = document.getElementById("quiz-screen");
 const scoreScreen = document.getElementById("score-screen");
 const scoreElement = document.getElementById("score");
@@ -77,12 +94,16 @@ function startQuiz() {
     quizScreen.classList.remove("hidden");
     scoreScreen.classList.add("hidden");
     nextButton.classList.add("hidden");
+    progressText.classList.remove("hidden");
     showQuestion();
 }
 
 function showQuestion() {
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
+    
+    // Update question progress tracker
+    progressText.innerText = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
     questionElement.innerText = currentQuestion.question;
 
     currentQuestion.answers.forEach(answer => {
@@ -115,6 +136,7 @@ function selectAnswer(e) {
         selectedButton.classList.add("wrong");
     }
 
+    // Reveal correct answers and lock input
     Array.from(answerButtonsElement.children).forEach(button => {
         if (button.dataset.correct === "true") {
             button.classList.add("correct");
@@ -136,6 +158,7 @@ nextButton.addEventListener("click", () => {
 
 function showScore() {
     quizScreen.classList.add("hidden");
+    progressText.classList.add("hidden");
     scoreScreen.classList.remove("hidden");
     scoreElement.innerText = score;
     totalElement.innerText = questions.length;
@@ -143,4 +166,5 @@ function showScore() {
 
 restartButton.addEventListener("click", startQuiz);
 
+// Initialize application
 startQuiz();
